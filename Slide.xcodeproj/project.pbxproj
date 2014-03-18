@@ -14,13 +14,15 @@
 		07FC4DCF18D8A810003BD1C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DCE18D8A810003BD1C8 /* main.m */; };
 		07FC4DD318D8A810003BD1C8 /* SGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DD218D8A810003BD1C8 /* SGAppDelegate.m */; };
 		07FC4DD618D8A810003BD1C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FC4DD418D8A810003BD1C8 /* Main.storyboard */; };
-		07FC4DD918D8A810003BD1C8 /* SGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DD818D8A810003BD1C8 /* SGViewController.m */; };
 		07FC4DDB18D8A810003BD1C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FC4DDA18D8A810003BD1C8 /* Images.xcassets */; };
 		07FC4DE218D8A810003BD1C8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DE118D8A810003BD1C8 /* XCTest.framework */; };
 		07FC4DE318D8A810003BD1C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC218D8A810003BD1C8 /* Foundation.framework */; };
 		07FC4DE418D8A810003BD1C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC618D8A810003BD1C8 /* UIKit.framework */; };
 		07FC4DEC18D8A810003BD1C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FC4DEA18D8A810003BD1C8 /* InfoPlist.strings */; };
 		07FC4DEE18D8A810003BD1C8 /* SlideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DED18D8A810003BD1C8 /* SlideTests.m */; };
+		07FC4DF918D8A831003BD1C8 /* SGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DF818D8A831003BD1C8 /* SGGameViewController.m */; };
+		07FC4DFD18D8A847003BD1C8 /* SGBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4DFC18D8A847003BD1C8 /* SGBoard.m */; };
+		07FC4E0218D8AF65003BD1C8 /* SGBoardPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC4E0118D8AF65003BD1C8 /* SGBoardPiece.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,18 @@
 		07FC4DD118D8A810003BD1C8 /* SGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGAppDelegate.h; sourceTree = "<group>"; };
 		07FC4DD218D8A810003BD1C8 /* SGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGAppDelegate.m; sourceTree = "<group>"; };
 		07FC4DD518D8A810003BD1C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07FC4DD718D8A810003BD1C8 /* SGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGViewController.h; sourceTree = "<group>"; };
-		07FC4DD818D8A810003BD1C8 /* SGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGViewController.m; sourceTree = "<group>"; };
 		07FC4DDA18D8A810003BD1C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07FC4DE018D8A810003BD1C8 /* SlideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC4DE118D8A810003BD1C8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07FC4DE918D8A810003BD1C8 /* SlideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlideTests-Info.plist"; sourceTree = "<group>"; };
 		07FC4DEB18D8A810003BD1C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07FC4DED18D8A810003BD1C8 /* SlideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTests.m; sourceTree = "<group>"; };
+		07FC4DF718D8A831003BD1C8 /* SGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGameViewController.h; sourceTree = "<group>"; };
+		07FC4DF818D8A831003BD1C8 /* SGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGameViewController.m; sourceTree = "<group>"; };
+		07FC4DFB18D8A847003BD1C8 /* SGBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBoard.h; sourceTree = "<group>"; };
+		07FC4DFC18D8A847003BD1C8 /* SGBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBoard.m; sourceTree = "<group>"; };
+		07FC4E0018D8AF65003BD1C8 /* SGBoardPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBoardPiece.h; sourceTree = "<group>"; };
+		07FC4E0118D8AF65003BD1C8 /* SGBoardPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBoardPiece.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +118,12 @@
 		07FC4DC818D8A810003BD1C8 /* Slide */ = {
 			isa = PBXGroup;
 			children = (
+				07FC4DFF18D8AF57003BD1C8 /* Parts */,
+				07FC4DFE18D8A857003BD1C8 /* Data Structures */,
+				07FC4DFA18D8A837003BD1C8 /* View Controllers */,
 				07FC4DD118D8A810003BD1C8 /* SGAppDelegate.h */,
 				07FC4DD218D8A810003BD1C8 /* SGAppDelegate.m */,
 				07FC4DD418D8A810003BD1C8 /* Main.storyboard */,
-				07FC4DD718D8A810003BD1C8 /* SGViewController.h */,
-				07FC4DD818D8A810003BD1C8 /* SGViewController.m */,
 				07FC4DDA18D8A810003BD1C8 /* Images.xcassets */,
 				07FC4DC918D8A810003BD1C8 /* Supporting Files */,
 			);
@@ -150,6 +157,33 @@
 				07FC4DEA18D8A810003BD1C8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07FC4DFA18D8A837003BD1C8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07FC4DF718D8A831003BD1C8 /* SGGameViewController.h */,
+				07FC4DF818D8A831003BD1C8 /* SGGameViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		07FC4DFE18D8A857003BD1C8 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				07FC4DFB18D8A847003BD1C8 /* SGBoard.h */,
+				07FC4DFC18D8A847003BD1C8 /* SGBoard.m */,
+			);
+			name = "Data Structures";
+			sourceTree = "<group>";
+		};
+		07FC4DFF18D8AF57003BD1C8 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				07FC4E0018D8AF65003BD1C8 /* SGBoardPiece.h */,
+				07FC4E0118D8AF65003BD1C8 /* SGBoardPiece.m */,
+			);
+			name = Parts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FC4DD318D8A810003BD1C8 /* SGAppDelegate.m in Sources */,
-				07FC4DD918D8A810003BD1C8 /* SGViewController.m in Sources */,
+				07FC4E0218D8AF65003BD1C8 /* SGBoardPiece.m in Sources */,
 				07FC4DCF18D8A810003BD1C8 /* main.m in Sources */,
+				07FC4DFD18D8A847003BD1C8 /* SGBoard.m in Sources */,
+				07FC4DF918D8A831003BD1C8 /* SGGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

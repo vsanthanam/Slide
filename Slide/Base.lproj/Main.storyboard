@@ -1,25 +1,182 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QXL-ym-bC2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Game View Controller-->
+        <scene sceneID="qf7-7r-uhT">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SGViewController" sceneMemberID="viewController">
+                <viewController id="QXL-ym-bC2" customClass="SGGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="q9T-zs-yJu"/>
+                        <viewControllerLayoutGuide type="bottom" id="xWq-xa-ct7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="FJQ-0V-HQp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz1-XR-VnY" customClass="SGBoardPiece">
+                                <rect key="frame" x="20" y="143" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uA-Pj-nuX" customClass="SGBoardPiece">
+                                <rect key="frame" x="20" y="215" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Juz-ft-Ul2" customClass="SGBoardPiece">
+                                <rect key="frame" x="92" y="215" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DBh-bu-1hX" customClass="SGBoardPiece">
+                                <rect key="frame" x="164" y="215" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="8" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgQ-rU-b49" customClass="SGBoardPiece">
+                                <rect key="frame" x="236" y="215" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="9" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gsh-RU-hLC" customClass="SGBoardPiece">
+                                <rect key="frame" x="20" y="287" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDv-Tl-LdU" customClass="SGBoardPiece">
+                                <rect key="frame" x="92" y="287" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="11" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byS-J6-FCC" customClass="SGBoardPiece">
+                                <rect key="frame" x="164" y="287" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="12" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNY-ww-cxd" customClass="SGBoardPiece">
+                                <rect key="frame" x="236" y="287" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="13" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-qq-8KA" customClass="SGBoardPiece">
+                                <rect key="frame" x="20" y="359" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="14" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-tT-Ihr" customClass="SGBoardPiece">
+                                <rect key="frame" x="92" y="359" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="15" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-62-g6P" customClass="SGBoardPiece">
+                                <rect key="frame" x="164" y="359" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="16" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wtd-oe-qdd" customClass="SGBoardPiece">
+                                <rect key="frame" x="236" y="360" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-XF-5mf" customClass="SGBoardPiece">
+                                <rect key="frame" x="236" y="143" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjb-gm-zLV" customClass="SGBoardPiece">
+                                <rect key="frame" x="164" y="143" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81v-Vw-GCP" customClass="SGBoardPiece">
+                                <rect key="frame" x="92" y="143" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeL-kw-ImP">
+                                <rect key="frame" x="20" y="443" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-jZ-VWB">
+                                <rect key="frame" x="20" y="500" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2048" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-dg-4pi">
+                                <rect key="frame" x="20" y="41" width="280" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Q30-Q0-GJV" appends="YES" id="LWK-Mg-d8f"/>
+                            <outletCollection property="gestureRecognizers" destination="jEg-5m-2Y6" appends="YES" id="bor-jr-ye1"/>
+                            <outletCollection property="gestureRecognizers" destination="LRO-oA-ooa" appends="YES" id="cWE-kE-FRh"/>
+                            <outletCollection property="gestureRecognizers" destination="ypi-lY-DdA" appends="YES" id="b3D-yQ-U7g"/>
+                            <outletCollection property="gestureRecognizers" destination="CT1-my-KdZ" appends="YES" id="cx8-Oz-wdk"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="highSchoreLabel" destination="7Od-jZ-VWB" id="VoO-rW-jj7"/>
+                        <outlet property="p00" destination="Tz1-XR-VnY" id="MpA-Pj-9Tx"/>
+                        <outlet property="p01" destination="8uA-Pj-nuX" id="U1e-cS-N3S"/>
+                        <outlet property="p02" destination="Gsh-RU-hLC" id="JBC-D5-gcE"/>
+                        <outlet property="p03" destination="RnE-qq-8KA" id="QF6-0j-iD3"/>
+                        <outlet property="p10" destination="81v-Vw-GCP" id="7JU-O2-l4X"/>
+                        <outlet property="p11" destination="Juz-ft-Ul2" id="2N9-Gm-pEj"/>
+                        <outlet property="p12" destination="kDv-Tl-LdU" id="xId-dN-bin"/>
+                        <outlet property="p13" destination="qJB-tT-Ihr" id="hgv-R4-AVn"/>
+                        <outlet property="p20" destination="Bjb-gm-zLV" id="zFB-pD-p16"/>
+                        <outlet property="p21" destination="DBh-bu-1hX" id="sug-sC-H9x"/>
+                        <outlet property="p22" destination="byS-J6-FCC" id="Fn3-hO-M1L"/>
+                        <outlet property="p23" destination="IFz-62-g6P" id="mkX-KT-A7T"/>
+                        <outlet property="p30" destination="7pp-XF-5mf" id="9Zn-CG-r7F"/>
+                        <outlet property="p31" destination="rgQ-rU-b49" id="Zgh-Yr-yyH"/>
+                        <outlet property="p32" destination="QNY-ww-cxd" id="vB6-ks-I4M"/>
+                        <outlet property="p33" destination="Wtd-oe-qdd" id="Ofm-Nz-vKS"/>
+                        <outlet property="scoreLabel" destination="xeL-kw-ImP" id="CzW-1a-EvI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2T-te-nLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="LRO-oA-ooa">
+                    <connections>
+                        <action selector="userSwipeDown:" destination="QXL-ym-bC2" id="N2X-tY-Cof"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="ypi-lY-DdA">
+                    <connections>
+                        <action selector="userSwipeUp:" destination="QXL-ym-bC2" id="LKW-Vt-SrP"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="jEg-5m-2Y6">
+                    <connections>
+                        <action selector="userSwipeLeft:" destination="QXL-ym-bC2" id="12w-B8-EoX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Q30-Q0-GJV">
+                    <connections>
+                        <action selector="userSwipeRight:" destination="QXL-ym-bC2" id="Y3h-kc-bfk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pinchGestureRecognizer id="CT1-my-KdZ">
+                    <connections>
+                        <action selector="userNewGame:" destination="QXL-ym-bC2" id="cg4-sC-ZVO"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="470" y="23"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

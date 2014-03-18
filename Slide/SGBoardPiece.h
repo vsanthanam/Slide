@@ -1,5 +1,5 @@
 //
-//  SGViewController.h
+//  SGBoardPiece.h
 //  Slide
 //
 //  Created by Varun Santhanam on 3/18/14.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGBoard.h"
 
-@interface SGViewController : UIViewController
+@interface SGBoardPiece : UIView
+
+@property (nonatomic, assign) SGBoardSquare status;
 
 @end
