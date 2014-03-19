@@ -72,8 +72,7 @@
     self->_pieces[2][3] = self.p23.tag;
     self->_pieces[3][3] = self.p33.tag;
     
-    self.title = @"2048";
-    NSLog(@"%i", [self.board getSquareAtX:3 Y:1]);
+    self.title = @"Slide";
     [self updateBoardScreen];
     
 }
@@ -155,8 +154,9 @@
 - (IBAction)userSwipeLeft:(id)sender {
     
     NSLog(@"Swipe Left");
-    [self.board slideLeft];
-    [self.board dropRandom];
+    if ([self.board slideLeft]) {
+        [self.board dropRandom];
+    }
     [self updateBoardScreen];
     
 }
@@ -164,16 +164,19 @@
 - (IBAction)userSwipeRight:(id)sender {
     
     NSLog(@"Swipe Right");
-    [self.board slideRight];
-    [self.board dropRandom];
+    if ([self.board slideRight]) {
+        [self.board dropRandom];
+    }
     [self updateBoardScreen];
+    
 }
 
 - (IBAction)userSwipeUp:(id)sender {
     
     NSLog(@"Swipe Up");
-    [self.board slideUp];
-    [self.board dropRandom];
+    if ([self.board slideUp]) {
+        [self.board dropRandom];
+    }
     [self updateBoardScreen];
     
 }
@@ -182,7 +185,9 @@
     
     NSLog(@"Swipe Down");
     [self.board slideDown];
-    [self.board dropRandom];
+    if ([self.board slideDown]) {
+        [self.board dropRandom];
+    }
     [self updateBoardScreen];
     
 }

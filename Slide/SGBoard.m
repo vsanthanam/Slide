@@ -18,6 +18,28 @@
 
 @synthesize score = _score;
 
+#pragma mark - Property Access Instance Methods
+
+- (NSString *)canAddR {
+    
+    NSString *rv = @"";
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            rv = [NSString stringWithFormat:@"%@ %i", rv, self->_canAdd[x][y]];
+            
+        }
+        
+        rv = [NSString stringWithFormat:@"%@\n", rv];
+        
+    }
+    
+    return rv;
+    
+}
+
 #pragma mark - Overridden Instance Methods
 
 - (id)init {
@@ -56,6 +78,26 @@
     self->_board[x2][y2] = SGBoardSquare2;
     
     return self;
+    
+}
+
+- (NSString *)description {
+    
+    NSString *rv = @"";
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            rv = [NSString stringWithFormat:@"%@ V: %i", rv, self->_board[x][y]];
+            
+        }
+        
+        rv = [NSString stringWithFormat:@"%@\n", rv];
+        
+    }
+    
+    return rv;
     
 }
 
@@ -159,6 +201,10 @@
         
         return;
         
+    } else if (self->_board[x][y] == SGBoardSquareE) {
+      
+        return;
+        
     } else if (self->_board[x][y-1] == self->_board[x][y] && self->_canAdd[x][y-1]) {
         
         self->_board[x][y-1] = (SGBoardSquare)(self->_board[x][y] + self->_board[x][y-1]);
@@ -184,6 +230,10 @@
 - (void)moveDownX:(NSInteger)x Y:(NSInteger)y {
     
     if (y == 3) {
+        
+        return;
+        
+    } else if (self->_board[x][y] == SGBoardSquareE) {
         
         return;
         
@@ -216,6 +266,10 @@
         
         return;
         
+    } else if (self->_board[x][y] == SGBoardSquareE) {
+        
+        return;
+    
     } else if (self->_board[x+1][y] == self->_board[x][y] && self->_canAdd[x+1][y]) {
         
         self->_board[x+1][y] = (SGBoardSquare)(self->_board[x][y] + self->_board[x+1][y]);
@@ -242,6 +296,10 @@
 - (void)moveLeftX:(NSInteger)x Y:(NSInteger)y {
     
     if (x == 0) {
+        
+        return;
+        
+    } else if (self->_board[x][y] == SGBoardSquareE) {
         
         return;
         
@@ -326,6 +384,18 @@
 
 - (BOOL)slideUp {
     
+    SGBoardSquare copy[4][4];
+    
+    for (int x = 0; x < 4; x++) {
+    
+        for (int y = 0; y < 4; y++) {
+            
+            copy[x][y] = self->_board[x][y];
+            
+        }
+        
+    }
+    
     for (int x = 0; x < 4; x++) {
         
         for (int y = 0; y < 4; y++) {
@@ -338,10 +408,37 @@
     
     [self resetCanAdd];
     
-    return YES;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (copy[x][y] != self->_board[x][y]) {
+                
+                return YES;
+                
+            }
+            
+        }
+        
+    }
+    
+    return NO;
+    
 }
 
 - (BOOL)slideDown {
+    
+    SGBoardSquare copy[4][4];
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            copy[x][y] = self->_board[x][y];
+            
+        }
+        
+    }
     
     for (int x = 0; x < 4; x++) {
         
@@ -355,11 +452,37 @@
     
     [self resetCanAdd];
     
-    return YES;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (copy[x][y] != self->_board[x][y]) {
+                
+                return YES;
+                
+            }
+            
+        }
+        
+    }
+    
+    return NO;
     
 }
 
 - (BOOL)slideLeft {
+    
+    SGBoardSquare copy[4][4];
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            copy[x][y] = self->_board[x][y];
+            
+        }
+        
+    }
     
     for (int y = 0; y < 4; y++) {
         
@@ -373,11 +496,37 @@
     
     [self resetCanAdd];
     
-    return YES;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (copy[x][y] != self->_board[x][y]) {
+                
+                return YES;
+                
+            }
+            
+        }
+        
+    }
+    
+    return NO;
     
 }
 
 - (BOOL)slideRight {
+    
+    SGBoardSquare copy[4][4];
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            copy[x][y] = self->_board[x][y];
+            
+        }
+        
+    }
     
     for (int y = 0; y < 4; y++) {
         
@@ -391,7 +540,21 @@
     
     [self resetCanAdd];
     
-    return YES;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (copy[x][y] != self->_board[x][y]) {
+                
+                return YES;
+                
+            }
+            
+        }
+        
+    }
+    
+    return NO;
     
 }
 
