@@ -130,22 +130,6 @@
                     </view>
                     <connections>
                         <outlet property="highSchoreLabel" destination="7Od-jZ-VWB" id="VoO-rW-jj7"/>
-                        <outlet property="p00" destination="Tz1-XR-VnY" id="MpA-Pj-9Tx"/>
-                        <outlet property="p01" destination="8uA-Pj-nuX" id="U1e-cS-N3S"/>
-                        <outlet property="p02" destination="Gsh-RU-hLC" id="JBC-D5-gcE"/>
-                        <outlet property="p03" destination="RnE-qq-8KA" id="QF6-0j-iD3"/>
-                        <outlet property="p10" destination="81v-Vw-GCP" id="7JU-O2-l4X"/>
-                        <outlet property="p11" destination="Juz-ft-Ul2" id="2N9-Gm-pEj"/>
-                        <outlet property="p12" destination="kDv-Tl-LdU" id="xId-dN-bin"/>
-                        <outlet property="p13" destination="qJB-tT-Ihr" id="hgv-R4-AVn"/>
-                        <outlet property="p20" destination="Bjb-gm-zLV" id="zFB-pD-p16"/>
-                        <outlet property="p21" destination="DBh-bu-1hX" id="sug-sC-H9x"/>
-                        <outlet property="p22" destination="byS-J6-FCC" id="Fn3-hO-M1L"/>
-                        <outlet property="p23" destination="IFz-62-g6P" id="mkX-KT-A7T"/>
-                        <outlet property="p30" destination="7pp-XF-5mf" id="9Zn-CG-r7F"/>
-                        <outlet property="p31" destination="rgQ-rU-b49" id="Zgh-Yr-yyH"/>
-                        <outlet property="p32" destination="QNY-ww-cxd" id="vB6-ks-I4M"/>
-                        <outlet property="p33" destination="Wtd-oe-qdd" id="Ofm-Nz-vKS"/>
                         <outlet property="scoreLabel" destination="xeL-kw-ImP" id="CzW-1a-EvI"/>
                     </connections>
                 </viewController>

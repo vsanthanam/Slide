@@ -19,26 +19,25 @@
 @implementation SGGameViewController
 
 @synthesize board = _board;
+@synthesize gameCenterEnabled = _gameCenterEnabled;
+@synthesize boardEnabled = _boardEnabled;
 
 @synthesize scoreLabel = _scoreLabel;
 @synthesize highSchoreLabel;
 
-@synthesize p00 = _p00;
-@synthesize p10 = _p10;
-@synthesize p20 = _p20;
-@synthesize p30 = _p30;
-@synthesize p01 = _p01;
-@synthesize p11 = _p11;
-@synthesize p21 = _p21;
-@synthesize p31 = _p31;
-@synthesize p02 = _p02;
-@synthesize p12 = _p12;
-@synthesize p22 = _p22;
-@synthesize p32 = _p32;
-@synthesize p03 = _p03;
-@synthesize p13 = _p13;
-@synthesize p23 = _p23;
-@synthesize p33 = _p33;
+#pragma mark - Property Access Methods
+
+- (BOOL)isGameCenterEnabled {
+    
+    return self->_gameCenterEnabled;
+    
+}
+
+- (BOOL)isBoardEnabled {
+    
+    return self->_boardEnabled;
+    
+}
 
 #pragma mark - Overridden Instance Methods
 
@@ -55,25 +54,31 @@
 {
     [super viewDidLoad];
     self.board = [[SGBoard alloc] init];
-    self->_pieces[0][0] = self.p00.tag;
-    self->_pieces[1][0] = self.p10.tag;
-    self->_pieces[2][0] = self.p20.tag;
-    self->_pieces[3][0] = self.p30.tag;
-    self->_pieces[0][1] = self.p01.tag;
-    self->_pieces[1][1] = self.p11.tag;
-    self->_pieces[2][1] = self.p21.tag;
-    self->_pieces[3][1] = self.p31.tag;
-    self->_pieces[0][2] = self.p02.tag;
-    self->_pieces[1][2] = self.p12.tag;
-    self->_pieces[2][2] = self.p22.tag;
-    self->_pieces[3][2] = self.p32.tag;
-    self->_pieces[0][3] = self.p03.tag;
-    self->_pieces[1][3] = self.p13.tag;
-    self->_pieces[2][3] = self.p23.tag;
-    self->_pieces[3][3] = self.p33.tag;
+    self->_pieces[0][0] = 1;
+    self->_pieces[1][0] = 2;
+    self->_pieces[2][0] = 3;
+    self->_pieces[3][0] = 4;
+    self->_pieces[0][1] = 5;
+    self->_pieces[1][1] = 6;
+    self->_pieces[2][1] = 7;
+    self->_pieces[3][1] = 8;
+    self->_pieces[0][2] = 9;
+    self->_pieces[1][2] = 10;
+    self->_pieces[2][2] = 11;
+    self->_pieces[3][2] = 12;
+    self->_pieces[0][3] = 13;
+    self->_pieces[1][3] = 14;
+    self->_pieces[2][3] = 15;
+    self->_pieces[3][3] = 16;
     
     self.title = @"Slide";
-    [self updateBoardScreen];
+    [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self authenticateLocalPlayer];
     
 }
 
@@ -85,7 +90,7 @@
 
 #pragma mark - Private Instance Methods
 
-- (void)updateBoardScreen {
+- (void)updateBoardScreenWithTransition:(UIViewAnimationOptions)transition {
     
     if ([[NSUserDefaults standardUserDefaults] integerForKey:@"highscore"]) {
         
@@ -104,7 +109,7 @@
             SGBoardPiece *piece = (SGBoardPiece *)[self.view viewWithTag:self->_pieces[x][y]];
             [UIView transitionWithView:piece
                               duration:0.5
-                               options:UIViewAnimationOptionTransitionCrossDissolve
+                               options:transition
                             animations:^{
                                 
                                 piece.status = [self.board getSquareAtX:x Y:y];
@@ -117,6 +122,8 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score %li", (long)self.board.score];
     
     if (self.board.isOver) {
+        
+        [self disableBoard];
         
         if (self.board.didLose) {
             
@@ -149,53 +156,156 @@
     
 }
 
+- (void)authenticateLocalPlayer {
+    
+    __weak GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error) {
+      
+        if (viewController) {
+            
+            [self presentViewController:viewController animated:YES completion:^{
+               
+                NSLog(@"Displayed Login Screen");
+                
+            }];
+            
+        } else if (localPlayer.isAuthenticated) {
+            
+            [self enableGameCenterWithPlayer:localPlayer];
+            NSLog(@"Local Player Authenticated");
+            self->_gameCenterEnabled = YES;
+            
+        } else {
+            
+            [self disableGameCenter];
+            NSLog(@"Failed To Authenticate Local Player");
+            self->_gameCenterEnabled = NO;
+        }
+        
+    };
+    
+}
+
+- (void)enableGameCenterWithPlayer:(GKLocalPlayer *)localPlayer {
+    
+}
+
+- (void)disableGameCenter {
+    
+}
+
+#pragma mark - Public Instance Methods
+
+- (void)enableBoard {
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            SGBoardPiece *piece = (SGBoardPiece *)[self.view viewWithTag:self->_pieces[x][y]];
+            [UIView animateWithDuration:1.0
+                             animations:^{
+                                 
+                                 piece.alpha = 1.0;
+                                 
+                             }
+                             completion:^(BOOL finished) {
+                                 
+                                 NSLog(@"Board Enabled");
+                                 
+                             }];
+            
+        }
+        
+    }
+    self->_boardEnabled = YES;
+    
+}
+
+- (void)disableBoard {
+    
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            SGBoardPiece *piece = (SGBoardPiece *)[self.view viewWithTag:self->_pieces[x][y]];
+            [UIView animateWithDuration:1.0
+                             animations:^{
+                                 
+                                 piece.alpha = 0.3;
+                                 
+                             }completion:^(BOOL finished) {
+                                 
+                                 NSLog(@"Board Disabled");
+                                 
+                             }];
+            
+        }
+        
+    }
+    self->_boardEnabled = NO;
+    
+}
+
 #pragma mark - Actions
 
 - (IBAction)userSwipeLeft:(id)sender {
     
     NSLog(@"Swipe Left");
-    if ([self.board slideLeft]) {
+    if ([self.board slideLeft] && self.isBoardEnabled) {
+        
         [self.board dropRandom];
+        [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
+        
     }
-    [self updateBoardScreen];
+    NSLog(@"%@", self.board);
     
 }
 
 - (IBAction)userSwipeRight:(id)sender {
     
     NSLog(@"Swipe Right");
-    if ([self.board slideRight]) {
+    if ([self.board slideRight] && self.isBoardEnabled) {
+        
         [self.board dropRandom];
+        [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
+        
     }
-    [self updateBoardScreen];
+    NSLog(@"%@", self.board);
     
 }
 
 - (IBAction)userSwipeUp:(id)sender {
     
     NSLog(@"Swipe Up");
-    if ([self.board slideUp]) {
+    if ([self.board slideUp] && self.isBoardEnabled) {
+        
         [self.board dropRandom];
+        [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
+        
     }
-    [self updateBoardScreen];
+    NSLog(@"%@", self.board);
     
 }
 
 - (IBAction)userSwipeDown:(id)sender {
     
     NSLog(@"Swipe Down");
-    [self.board slideDown];
-    if ([self.board slideDown]) {
+    if ([self.board slideDown] && self.isBoardEnabled) {
+        
         [self.board dropRandom];
+        [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
+        
     }
-    [self updateBoardScreen];
+    NSLog(@"%@", self.board);
     
 }
 
 - (IBAction)userNewGame:(id)sender {
     
+    [self enableBoard];
     self.board = [[SGBoard alloc] init];
-    [self updateBoardScreen];
+    [self updateBoardScreenWithTransition:UIViewAnimationOptionTransitionCrossDissolve];
     
 }
 @end

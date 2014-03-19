@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E8C75418D94D31006B3BDB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8C75318D94D31006B3BDB /* GameKit.framework */; };
 		07FC4DC318D8A810003BD1C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC218D8A810003BD1C8 /* Foundation.framework */; };
 		07FC4DC518D8A810003BD1C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC418D8A810003BD1C8 /* CoreGraphics.framework */; };
 		07FC4DC718D8A810003BD1C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC618D8A810003BD1C8 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07E8C75318D94D31006B3BDB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		07FC4DBF18D8A810003BD1C8 /* Slide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC4DC218D8A810003BD1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07FC4DC418D8A810003BD1C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 				07FC4DC518D8A810003BD1C8 /* CoreGraphics.framework in Frameworks */,
 				07FC4DC718D8A810003BD1C8 /* UIKit.framework in Frameworks */,
 				07FC4DC318D8A810003BD1C8 /* Foundation.framework in Frameworks */,
+				07E8C75418D94D31006B3BDB /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +110,7 @@
 		07FC4DC118D8A810003BD1C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07E8C75318D94D31006B3BDB /* GameKit.framework */,
 				07FC4DC218D8A810003BD1C8 /* Foundation.framework */,
 				07FC4DC418D8A810003BD1C8 /* CoreGraphics.framework */,
 				07FC4DC618D8A810003BD1C8 /* UIKit.framework */,
@@ -234,6 +238,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Varun Santhanam";
 				TargetAttributes = {
+					07FC4DBE18D8A810003BD1C8 = {
+						DevelopmentTeam = 3FJXDZ3HU4;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
 					07FC4DDF18D8A810003BD1C8 = {
 						TestTargetID = 07FC4DBE18D8A810003BD1C8;
 					};
@@ -413,10 +425,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slide/Slide-Prefix.pch";
 				INFOPLIST_FILE = "Slide/Slide-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -426,10 +441,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slide/Slide-Prefix.pch";
 				INFOPLIST_FILE = "Slide/Slide-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

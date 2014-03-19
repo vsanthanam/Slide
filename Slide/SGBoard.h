@@ -30,8 +30,8 @@ typedef enum {
 @property (nonatomic, readonly, getter = isOver) BOOL over;
 @property (nonatomic, assign, readonly) NSInteger score;
 @property (nonatomic, readonly) BOOL didLose;
-@property (nonatomic, readonly) NSString *canAddR;
 
+- (id)initWithBoard:(SGBoard *)data;
 - (BOOL)slideRight;
 - (BOOL)slideLeft;
 - (BOOL)slideUp;
