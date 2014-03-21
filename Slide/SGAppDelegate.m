@@ -10,9 +10,34 @@
 
 @implementation SGAppDelegate
 
+static NSString *tokenKey = @"iCloudToken";
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // Handle iCloud Setup
+    id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
+    if (currentiCloudToken) {
+        
+        NSData *newTokenData = [NSKeyedArchiver archivedDataWithRootObject:currentiCloudToken];
+        [[NSUserDefaults standardUserDefaults] setObject:newTokenData forKey:tokenKey];
+        
+    } else {
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:tokenKey];
+        
+    }
+    
+    // iCloud Availability Changed
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudAvailabilityChanged) name:NSUbiquityIdentityDidChangeNotification object:nil];
+    
+    // iCloud Data Push While Active
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeDidChange:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:[NSUbiquitousKeyValueStore defaultStore]];
+    
+    // iCloud Data Change While Inactive
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    
     return YES;
 }
 							
@@ -41,6 +66,58 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+// Handle Changes in iCloud Availability
+- (void)iCloudAvailabilityChanged {
+    
+    NSLog(@"iCloud Account Aviliability Changed");
+    
+    id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
+    if (!currentiCloudToken) {
+        
+        NSLog(@"iCloud Signed Out");
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:tokenKey];
+        [[NSUserDefaults standardUserDefaults] setBool:@"iCloud" forKey:NO];
+        
+    } else {
+        
+        NSLog(@"New iCloud Account");
+        
+        if (![currentiCloudToken isEqual:[NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:tokenKey]]]) {
+            
+            NSData *newTokenData = [NSKeyedArchiver archivedDataWithRootObject:currentiCloudToken];
+            [[NSUserDefaults standardUserDefaults] setObject:newTokenData forKey:tokenKey];
+            // Refresh UI -- New iCloud Account
+            
+            if ([[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"highscore"]) {
+                
+                [[NSUserDefaults standardUserDefaults] setInteger:[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"highscore"] forKey:@"highscore"];
+                
+            }
+            
+        } else {
+            
+            NSLog(@"Same iCloud Account");
+            
+        }
+        
+    }
+    
+}
+
+// Handle Changes In iCloud KV Data
+- (void)storeDidChange:(NSUbiquitousKeyValueStore *)store {
+    
+    NSLog(@"Recieved New iCloud Data From Push");
+    
+    if ([[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"highscore"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"highscore"] forKey:@"highscore"];
+        
+    }
+    
 }
 
 @end

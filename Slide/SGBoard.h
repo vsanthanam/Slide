@@ -27,9 +27,12 @@ typedef enum {
     
 } SGBoardSquare;
 
-@property (nonatomic, readonly, getter = isOver) BOOL over;
 @property (nonatomic, assign, readonly) NSInteger score;
+@property (nonatomic, readonly, getter = isOver) BOOL over;
 @property (nonatomic, readonly) BOOL didLose;
+@property (nonatomic, readonly) SGBoardSquare biggestTile;
+
++ (SGBoard *)boardWithBoard:(SGBoard *)data;
 
 - (id)initWithBoard:(SGBoard *)data;
 - (BOOL)slideRight;

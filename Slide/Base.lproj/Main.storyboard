@@ -7,6 +7,27 @@
         <!--Game View Controller-->
         <scene sceneID="qf7-7r-uhT">
             <objects>
+                <swipeGestureRecognizer direction="down" id="LRO-oA-ooa">
+                    <connections>
+                        <action selector="userSwipeDown:" destination="QXL-ym-bC2" id="N2X-tY-Cof"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="ypi-lY-DdA">
+                    <connections>
+                        <action selector="userSwipeUp:" destination="QXL-ym-bC2" id="LKW-Vt-SrP"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Q30-Q0-GJV">
+                    <connections>
+                        <action selector="userSwipeRight:" destination="QXL-ym-bC2" id="Y3h-kc-bfk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2T-te-nLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="jEg-5m-2Y6">
+                    <connections>
+                        <action selector="userSwipeLeft:" destination="QXL-ym-bC2" id="12w-B8-EoX"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <viewController id="QXL-ym-bC2" customClass="SGGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q9T-zs-yJu"/>
@@ -97,72 +118,268 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeL-kw-ImP">
-                                <rect key="frame" x="20" y="443" width="280" height="49"/>
+                                <rect key="frame" x="20" y="432" width="280" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-jZ-VWB">
-                                <rect key="frame" x="20" y="500" width="280" height="21"/>
+                                <rect key="frame" x="20" y="481" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-dg-4pi">
-                                <rect key="frame" x="20" y="41" width="280" height="76"/>
+                                <rect key="frame" x="20" y="37" width="280" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-8y-TyN">
+                                <rect key="frame" x="11" y="232" width="298" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="51"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userNewGame:" destination="QXL-ym-bC2" eventType="touchUpInside" id="tyC-zN-pOe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Een-LX-n0o">
+                                <rect key="frame" x="20" y="326" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa2-YV-ex2">
+                                <rect key="frame" x="101" y="355" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userShareGame:" destination="QXL-ym-bC2" eventType="touchUpInside" id="rGO-dP-UAD"/>
+                                </connections>
+                            </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWF-UR-pi1">
+                                <rect key="frame" x="0.0" y="517" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4a-1Y-tqk">
+                                <rect key="frame" x="246" y="447" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="lead.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userShowLeaderboard:" destination="QXL-ym-bC2" eventType="touchUpInside" id="hJ3-j7-YwD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-yc-buY">
+                                <rect key="frame" x="30" y="447" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ach.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userShowAchievements:" destination="QXL-ym-bC2" eventType="touchUpInside" id="6o3-OX-sFv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYS-uA-RjB">
+                                <rect key="frame" x="67" y="109" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45611040144934401" green="0.73839130785876739" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Q30-Q0-GJV" appends="YES" id="LWK-Mg-d8f"/>
                             <outletCollection property="gestureRecognizers" destination="jEg-5m-2Y6" appends="YES" id="bor-jr-ye1"/>
                             <outletCollection property="gestureRecognizers" destination="LRO-oA-ooa" appends="YES" id="cWE-kE-FRh"/>
                             <outletCollection property="gestureRecognizers" destination="ypi-lY-DdA" appends="YES" id="b3D-yQ-U7g"/>
-                            <outletCollection property="gestureRecognizers" destination="CT1-my-KdZ" appends="YES" id="cx8-Oz-wdk"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="achievementsButton" destination="Wnw-yc-buY" id="dHk-gb-TeI"/>
+                        <outlet property="adBanner" destination="hWF-UR-pi1" id="qav-yk-e3z"/>
+                        <outlet property="endLabel" destination="Een-LX-n0o" id="Scg-IB-80K"/>
                         <outlet property="highSchoreLabel" destination="7Od-jZ-VWB" id="VoO-rW-jj7"/>
+                        <outlet property="leaderboardButton" destination="U4a-1Y-tqk" id="ttc-am-slD"/>
+                        <outlet property="nameLabel" destination="QYS-uA-RjB" id="pgu-EM-Tpd"/>
+                        <outlet property="playAgainButton" destination="cEf-8y-TyN" id="Ntw-aA-rVZ"/>
                         <outlet property="scoreLabel" destination="xeL-kw-ImP" id="CzW-1a-EvI"/>
+                        <outlet property="shareButton" destination="qa2-YV-ex2" id="TX2-sD-qps"/>
+                        <segue destination="jw0-SU-SLM" kind="modal" identifier="welcomeSegue" modalTransitionStyle="crossDissolve" id="hzJ-A9-GyJ"/>
+                        <segue destination="M5q-14-mFl" kind="modal" identifier="backSegue" modalTransitionStyle="flipHorizontal" id="43E-lP-4AW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c2T-te-nLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="LRO-oA-ooa">
-                    <connections>
-                        <action selector="userSwipeDown:" destination="QXL-ym-bC2" id="N2X-tY-Cof"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="ypi-lY-DdA">
-                    <connections>
-                        <action selector="userSwipeUp:" destination="QXL-ym-bC2" id="LKW-Vt-SrP"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="jEg-5m-2Y6">
-                    <connections>
-                        <action selector="userSwipeLeft:" destination="QXL-ym-bC2" id="12w-B8-EoX"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="Q30-Q0-GJV">
-                    <connections>
-                        <action selector="userSwipeRight:" destination="QXL-ym-bC2" id="Y3h-kc-bfk"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <pinchGestureRecognizer id="CT1-my-KdZ">
-                    <connections>
-                        <action selector="userNewGame:" destination="QXL-ym-bC2" id="cg4-sC-ZVO"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="470" y="23"/>
+            <point key="canvasLocation" x="477" y="-238"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="Smg-w6-eGh">
+            <objects>
+                <viewController id="jw0-SU-SLM" customClass="SGWelcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1E2-j8-tph"/>
+                        <viewControllerLayoutGuide type="bottom" id="NwV-gg-MEQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KGs-Cc-qKb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-3B-w7V">
+                                <rect key="frame" x="20" y="46" width="280" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="47"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-ev-fFQ" customClass="SGBoardPiece">
+                                <rect key="frame" x="20" y="252" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ucn-ma-THh" customClass="SGBoardPiece">
+                                <rect key="frame" x="236" y="252" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="004-5i-uIU" customClass="SGBoardPiece">
+                                <rect key="frame" x="164" y="252" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-6E-WyQ" customClass="SGBoardPiece">
+                                <rect key="frame" x="92" y="252" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="swipe right.  > > >" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5J-f7-eB9">
+                                <rect key="frame" x="20" y="324" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45611040139999998" green="0.73839130789999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bUE-lz-GAy" appends="YES" id="awF-fb-PeC"/>
+                            <outletCollection property="gestureRecognizers" destination="OtF-d6-L3r" appends="YES" id="2t0-Pv-HMv"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Ws-xt-zME"/>
+                    <connections>
+                        <outlet property="helperTextLabel" destination="D5J-f7-eB9" id="zir-rO-SBH"/>
+                        <segue destination="fRx-KS-oAC" kind="modal" identifier="iCloudSegue" modalTransitionStyle="crossDissolve" id="kG7-Q8-45q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cci-RJ-b9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="bUE-lz-GAy">
+                    <connections>
+                        <action selector="userSwipeRight:" destination="jw0-SU-SLM" id="CyA-xb-PKS"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="OtF-d6-L3r">
+                    <connections>
+                        <action selector="userSwipeLeft:" destination="jw0-SU-SLM" id="leN-M2-WiG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1017" y="-902"/>
+        </scene>
+        <!--Gi Cloud View Controller-->
+        <scene sceneID="Y5P-Oq-f1t">
+            <objects>
+                <viewController id="fRx-KS-oAC" customClass="SGiCloudViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BBA-rC-s9M"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPb-jx-cQM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LCb-qw-U9P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use iCloud?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svd-ob-d5k">
+                                <rect key="frame" x="20" y="41" width="280" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="47"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jfu-6m-Y5M">
+                                <rect key="frame" x="164" y="438" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iCloud" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZG-bh-wzZ">
+                                <rect key="frame" x="108" y="443" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iCloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-e0-Cw1">
+                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I91-hY-QZ2">
+                                <rect key="frame" x="20" y="502" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Tap To Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userCloseTutorial:" destination="fRx-KS-oAC" eventType="touchUpInside" id="fDs-4b-AY9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45611040139999998" green="0.73839130789999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="iCloudSwitch" destination="Jfu-6m-Y5M" id="snR-N4-wCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxO-HK-TQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1502" y="-902"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="DiF-E9-TOf">
+            <objects>
+                <viewController id="M5q-14-mFl" customClass="SGSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ya3-55-j5U"/>
+                        <viewControllerLayoutGuide type="bottom" id="cwP-Cv-skj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KHU-19-D9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wrf-lO-dqm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jre-ZY-2Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="-238"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ach.png" width="64" height="64"/>
+        <image name="iCloud.png" width="256" height="256"/>
+        <image name="lead.png" width="64" height="64"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -18,6 +18,15 @@
 
 @synthesize score = _score;
 
+#pragma mark - Public Class Methods
+
+// Factory Method
++ (SGBoard *)boardWithBoard:(SGBoard *)data {
+    
+    return [[SGBoard alloc] initWithBoard:data];
+    
+}
+
 #pragma mark - Overridden Instance Methods
 
 - (id)init {
@@ -74,7 +83,7 @@
 
 - (NSString *)description {
     
-    NSString *rv = @"\n";
+    NSString *rv = @"Board Array: \n";
     
     for (int y = 0; y < 4; y++) {
         
@@ -89,6 +98,27 @@
     }
     
     return rv;
+    
+}
+
+- (BOOL)isEqual:(id)object {
+    
+    SGBoard *obj = (SGBoard *)object;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (self->_board[x][y] != obj->_board[x][y]) {
+                
+                return NO;
+                
+            }
+            
+        }
+        
+    }
+    
+    return YES;
     
 }
 
@@ -168,6 +198,12 @@
     self->_lost = YES;
     return YES;
     
+}
+
+- (SGBoardSquare)biggestTile {
+    
+    SGBoardSquare num = max_4x4_2d_array(self->_board);
+    return num;
 }
 
 - (BOOL)didLose {
@@ -622,6 +658,27 @@
     
 }
 
+#pragma mark - C Helper Functions
 
+SGBoardSquare max_4x4_2d_array(SGBoardSquare data[4][4]) {
+    
+    NSInteger max = 0;
+    for (int x = 0; x < 4; x++) {
+        
+        for (int y = 0; y < 4; y++) {
+            
+            if (data[x][y] > max) {
+                
+                max = data[x][y];
+                
+            }
+            
+        }
+        
+    }
+    
+    return (SGBoardSquare)max;
+    
+}
 
 @end

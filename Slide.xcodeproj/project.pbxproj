@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079031DC18DCAA60006DF8B3 /* SGSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079031DB18DCAA60006DF8B3 /* SGSettingsViewController.m */; };
+		079031DF18DCAA67006DF8B3 /* SGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079031DE18DCAA67006DF8B3 /* SGWelcomeViewController.m */; };
+		079031E318DCBDD3006DF8B3 /* iCloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079031E118DCBDD3006DF8B3 /* iCloud@2x.png */; };
+		079031E418DCBDD3006DF8B3 /* iCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 079031E218DCBDD3006DF8B3 /* iCloud.png */; };
+		079031E718DCBEBD006DF8B3 /* SGiCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079031E618DCBEBD006DF8B3 /* SGiCloudViewController.m */; };
+		07C69A2D18DA43D8008EB1BE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C69A2C18DA43D8008EB1BE /* iAd.framework */; };
+		07C69A3218DA55E2008EB1BE /* ach@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C69A2E18DA55E2008EB1BE /* ach@2x.png */; };
+		07C69A3318DA55E2008EB1BE /* lead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C69A2F18DA55E2008EB1BE /* lead@2x.png */; };
+		07C69A3418DA55E2008EB1BE /* ach.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C69A3018DA55E2008EB1BE /* ach.png */; };
+		07C69A3518DA55E2008EB1BE /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C69A3118DA55E2008EB1BE /* lead.png */; };
 		07E8C75418D94D31006B3BDB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8C75318D94D31006B3BDB /* GameKit.framework */; };
 		07FC4DC318D8A810003BD1C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC218D8A810003BD1C8 /* Foundation.framework */; };
 		07FC4DC518D8A810003BD1C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC4DC418D8A810003BD1C8 /* CoreGraphics.framework */; };
@@ -37,6 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		079031DA18DCAA60006DF8B3 /* SGSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSettingsViewController.h; sourceTree = "<group>"; };
+		079031DB18DCAA60006DF8B3 /* SGSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSettingsViewController.m; sourceTree = "<group>"; };
+		079031DD18DCAA67006DF8B3 /* SGWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWelcomeViewController.h; sourceTree = "<group>"; };
+		079031DE18DCAA67006DF8B3 /* SGWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWelcomeViewController.m; sourceTree = "<group>"; };
+		079031E018DCABBC006DF8B3 /* Slide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Slide.entitlements; sourceTree = "<group>"; };
+		079031E118DCBDD3006DF8B3 /* iCloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iCloud@2x.png"; sourceTree = "<group>"; };
+		079031E218DCBDD3006DF8B3 /* iCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iCloud.png; sourceTree = "<group>"; };
+		079031E518DCBEBD006DF8B3 /* SGiCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGiCloudViewController.h; sourceTree = "<group>"; };
+		079031E618DCBEBD006DF8B3 /* SGiCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGiCloudViewController.m; sourceTree = "<group>"; };
+		07C69A2C18DA43D8008EB1BE /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		07C69A2E18DA55E2008EB1BE /* ach@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ach@2x.png"; sourceTree = "<group>"; };
+		07C69A2F18DA55E2008EB1BE /* lead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lead@2x.png"; sourceTree = "<group>"; };
+		07C69A3018DA55E2008EB1BE /* ach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ach.png; sourceTree = "<group>"; };
+		07C69A3118DA55E2008EB1BE /* lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lead.png; sourceTree = "<group>"; };
 		07E8C75318D94D31006B3BDB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		07FC4DBF18D8A810003BD1C8 /* Slide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC4DC218D8A810003BD1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C69A2D18DA43D8008EB1BE /* iAd.framework in Frameworks */,
 				07FC4DC518D8A810003BD1C8 /* CoreGraphics.framework in Frameworks */,
 				07FC4DC718D8A810003BD1C8 /* UIKit.framework in Frameworks */,
 				07FC4DC318D8A810003BD1C8 /* Foundation.framework in Frameworks */,
@@ -110,6 +135,7 @@
 		07FC4DC118D8A810003BD1C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07C69A2C18DA43D8008EB1BE /* iAd.framework */,
 				07E8C75318D94D31006B3BDB /* GameKit.framework */,
 				07FC4DC218D8A810003BD1C8 /* Foundation.framework */,
 				07FC4DC418D8A810003BD1C8 /* CoreGraphics.framework */,
@@ -122,6 +148,7 @@
 		07FC4DC818D8A810003BD1C8 /* Slide */ = {
 			isa = PBXGroup;
 			children = (
+				079031E018DCABBC006DF8B3 /* Slide.entitlements */,
 				07FC4DFF18D8AF57003BD1C8 /* Parts */,
 				07FC4DFE18D8A857003BD1C8 /* Data Structures */,
 				07FC4DFA18D8A837003BD1C8 /* View Controllers */,
@@ -137,6 +164,12 @@
 		07FC4DC918D8A810003BD1C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				079031E118DCBDD3006DF8B3 /* iCloud@2x.png */,
+				079031E218DCBDD3006DF8B3 /* iCloud.png */,
+				07C69A2E18DA55E2008EB1BE /* ach@2x.png */,
+				07C69A2F18DA55E2008EB1BE /* lead@2x.png */,
+				07C69A3018DA55E2008EB1BE /* ach.png */,
+				07C69A3118DA55E2008EB1BE /* lead.png */,
 				07FC4DCA18D8A810003BD1C8 /* Slide-Info.plist */,
 				07FC4DCB18D8A810003BD1C8 /* InfoPlist.strings */,
 				07FC4DCE18D8A810003BD1C8 /* main.m */,
@@ -168,6 +201,12 @@
 			children = (
 				07FC4DF718D8A831003BD1C8 /* SGGameViewController.h */,
 				07FC4DF818D8A831003BD1C8 /* SGGameViewController.m */,
+				079031DA18DCAA60006DF8B3 /* SGSettingsViewController.h */,
+				079031DB18DCAA60006DF8B3 /* SGSettingsViewController.m */,
+				079031DD18DCAA67006DF8B3 /* SGWelcomeViewController.h */,
+				079031DE18DCAA67006DF8B3 /* SGWelcomeViewController.m */,
+				079031E518DCBEBD006DF8B3 /* SGiCloudViewController.h */,
+				079031E618DCBEBD006DF8B3 /* SGiCloudViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -244,6 +283,9 @@
 							com.apple.GameCenter = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					07FC4DDF18D8A810003BD1C8 = {
@@ -275,9 +317,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C69A3418DA55E2008EB1BE /* ach.png in Resources */,
 				07FC4DDB18D8A810003BD1C8 /* Images.xcassets in Resources */,
+				079031E318DCBDD3006DF8B3 /* iCloud@2x.png in Resources */,
+				07C69A3518DA55E2008EB1BE /* lead.png in Resources */,
+				079031E418DCBDD3006DF8B3 /* iCloud.png in Resources */,
 				07FC4DCD18D8A810003BD1C8 /* InfoPlist.strings in Resources */,
+				07C69A3318DA55E2008EB1BE /* lead@2x.png in Resources */,
 				07FC4DD618D8A810003BD1C8 /* Main.storyboard in Resources */,
+				07C69A3218DA55E2008EB1BE /* ach@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +345,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FC4DD318D8A810003BD1C8 /* SGAppDelegate.m in Sources */,
+				079031DF18DCAA67006DF8B3 /* SGWelcomeViewController.m in Sources */,
 				07FC4E0218D8AF65003BD1C8 /* SGBoardPiece.m in Sources */,
 				07FC4DCF18D8A810003BD1C8 /* main.m in Sources */,
+				079031E718DCBEBD006DF8B3 /* SGiCloudViewController.m in Sources */,
 				07FC4DFD18D8A847003BD1C8 /* SGBoard.m in Sources */,
 				07FC4DF918D8A831003BD1C8 /* SGGameViewController.m in Sources */,
+				079031DC18DCAA60006DF8B3 /* SGSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Slide/Slide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -441,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Slide/Slide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

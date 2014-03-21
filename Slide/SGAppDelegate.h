@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)iCloudAvailabilityChanged;
+- (void)storeDidChange:(NSUbiquitousKeyValueStore *)store;
+
 @end
